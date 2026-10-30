@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROADS Community Clinics | Whole-Person Healthcare in South LA & Long Beach</title>
+    <meta name="description" content="The ROADS Foundation Inc. provides integrated medical, behavioral health, and dental services to South Los Angeles and Long Beach residents regardless of ability to pay.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            deep: '#0A4D68',     /* Primary deep medical blue */
+                            teal: '#088395',     /* Secondary vibrant teal */
+                            cyan: '#05BFDB',     /* Cyan accent */
+                            light: '#EBF4F6',    /* Soft background blue */
+                            slate: '#0F172A',    /* Dark slate text/bg */
+                            accent: '#F59E0B'    /* Warm gold accent */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Accessibility & High-Contrast Styles -->
+    <style>
+        :root {
+            --base-font-size: 16px;
+        }
+
+        html {
+            font-size: var(--base-font-size);
+        }
+
+        /* Focus Visible Styles for WCAG 2.1 AA Compliance */
+        *:focus-visible {
+            outline: 3px solid #088395 !important;
+            outline-offset: 3px !important;
+        }
+
+        /* Skip link for screen reader and keyboard accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: #0A4D68;
+            color: #ffffff;
+            padding: 0.75rem 1.25rem;
+            z-index: 9999;
+            font-weight: 700;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* High Contrast Mode Overrides */
+        body.high-contrast {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+
+        body.high-contrast header,
+        body.high-contrast nav,
+        body.high-contrast section,
+        body.high-contrast footer,
+        body.high-contrast div,
+        body.high-contrast card {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+        }
+
+        body.high-contrast a,
+        body.high-contrast button {
+            color: #FFFF00 !important;
+            border-color: #FFFF00 !important;
+        }
+
+        body.high-contrast .btn-primary {
+            background-color: #FFFF00 !important;
+            color: #000000 !important;
+            font-weight: 800 !important;
+        }
+
+        body.high-contrast .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.92) !important;
+        }
+
+        /* Hero Video Styling */
+        .hero-video-container {
+            position: relative;
+            overflow: hidden;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #088395;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0A4D68;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-teal selection:text-white">
+
+    <!-- 1. SKIP TO MAIN CONTENT LINK (ADA Rule) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- 2. ANNOUNCEMENT & ACCESSIBILITY TOP HEADER BAR -->
+    <header role="banner" class="bg-brand-slate text-white text-xs border-b border-slate-700/80 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center py-2 gap-2">
+                
+                <!-- Phone Numbers & Quick Contact -->
+                <div class="flex flex-wrap items-center gap-4 text-slate-200">
+                    <a href="tel:3106275850" class="flex items-center gap-1.5 hover:text-brand-cyan transition" aria-label="Call Main Office at 310-627-5850">
+                        <i class="fa-solid fa-phone text-brand-cyan" aria-hidden="true"></i>
+                        <span class="font-medium">Main:</span> <strong class="font-semibold text-white">310-627-5850</strong>
+                    </a>
+                    <span class="hidden md:inline text-slate-600" aria-hidden="true">|</span>
+                    <a href="tel:8556450033" class="flex items-center gap-1.5 hover:text-brand-cyan transition" aria-label="Call 24/7 After Hours Nurse Line at 855-645-0033">
+                        <i class="fa-solid fa-user-nurse text-amber-400" aria-hidden="true"></i>
+                        <span class="font-medium">After Hours / 24-7 Nurse:</span> <strong class="font-semibold text-amber-300">855-645-0033</strong>
+                    </a>
+                </div>
+
+                <!-- Accessibility Controls & Language Toggles -->
+                <div class="flex items-center gap-3 ml-auto">
+                    <!-- Text Size Controls -->
+                    <div class="flex items-center bg-slate-800 rounded px-2 py-0.5 border border-slate-700" aria-label="Text Size Adjustment">
+                        <span class="text-[11px] mr-1.5 text-slate-400 font-medium">Text:</span>
+                        <button id="btn-decrease-text" onclick="changeFontSize(-1)" class="px-1.5 py-0.5 text-xs font-bold hover:text-brand-cyan transition" title="Decrease font size" aria-label="Decrease font size">A-</button>
+                        <button id="btn-reset-text" onclick="changeFontSize(0)" class="px-1.5 py-0.5 text-xs font-bold hover:text-brand-cyan transition" title="Reset font size" aria-label="Reset font size">A</button>
+                        <button id="btn-increase-text" onclick="changeFontSize(1)" class="px-1.5 py-0.5 text-xs font-bold hover:text-brand-cyan transition" title="Increase font size" aria-label="Increase font size">A+</button>
+                    </div>
+
+                    <!-- Contrast Toggle -->
+                    <button id="contrast-toggle" onclick="toggleHighContrast()" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1 rounded text-xs border border-slate-700 transition" aria-pressed="false" aria-label="Toggle High Contrast Mode">
+                        <i class="fa-solid fa-circle-half-stroke text-brand-cyan" aria-hidden="true"></i>
+                        <span class="hidden sm:inline font-medium">High Contrast</span>
+                    </button>
+
+                    <!-- Language Selector -->
+                    <div class="relative inline-block">
+                        <label for="language-select" class="sr-only">Select Language</label>
+                        <select id="language-select" class="bg-slate-800 text-slate-200 text-xs rounded border border-slate-700 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-brand-teal">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. MAIN NAVIGATION BAR -->
+    <nav role="navigation" aria-label="Main Site Navigation" class="bg-white border-b border-slate-200 shadow-sm sticky top-[37px] z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Brand Logo & FQHC Badge -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="ROADS Community Clinics Home">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-deep to-brand-teal rounded-xl flex items-center justify-center text-white font-black text-2xl shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-heart-pulse text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xl font-extrabold tracking-tight text-brand-deep leading-none">
+                                ROADS <span class="text-brand-teal font-normal">Clinics</span>
+                            </span>
+                            <span class="block text-[11px] font-semibold text-slate-500 tracking-wider uppercase mt-1">
+                                The ROADS Foundation Inc.
+                            </span>
+                        </div>
+                    </a>
+                    <span class="hidden lg:inline-block bg-teal-50 text-brand-teal text-xs font-bold px-2.5 py-1 rounded-full border border-teal-200">
+                        FQHC Designated
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="#about" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-teal hover:bg-slate-50 transition">About Us</a>
+                    <a href="#care-model" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-teal hover:bg-slate-50 transition">Integrated Care</a>
+                    <a href="#services" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-teal hover:bg-slate-50 transition">Services</a>
+                    <a href="#locations" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-teal hover:bg-slate-50 transition">Locations</a>
+                    <a href="#patients" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-teal hover:bg-slate-50 transition">Patients & Payment</a>
+                    <a href="#impact" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-teal hover:bg-slate-50 transition">Community Impact</a>
+                </div>
+
+                <!-- Header CTA Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openAppointmentModal()" class="btn-primary bg-brand-teal hover:bg-brand-deep text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                        <span>Book Appointment</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex lg:hidden items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-brand-teal p-2 rounded-lg focus:outline-none" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i id="menu-icon-open" class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
+                        <i id="menu-icon-close" class="fa-solid fa-xmark text-2xl hidden" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-md text-base font-medium text-slate-800 hover:bg-slate-100">About Us</a>
+            <a href="#care-model" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-md text-base font-medium text-slate-800 hover:bg-slate-100">Integrated Care Model</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-md text-base font-medium text-slate-800 hover:bg-slate-100">Our Services</a>
+            <a href="#locations" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-md text-base font-medium text-slate-800 hover:bg-slate-100">Clinic Locations</a>
+            <a href="#patients" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-md text-base font-medium text-slate-800 hover:bg-slate-100">Patients & Insurance</a>
+            <a href="#impact" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-md text-base font-medium text-slate-800 hover:bg-slate-100">Community Impact</a>
+            <div class="pt-4">
+                <button onclick="toggleMobileMenu(); openAppointmentModal();" class="w-full bg-brand-teal text-white font-bold py-3 rounded-lg text-center shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                    <span>Schedule an Appointment</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <main id="main-content" role="main">
+
+        <!-- 4. HERO SECTION (REQUIREMENTS MET: Centered layout, video background, text-only pill with NO AI indicators) -->
+        <section class="hero-video-container text-white text-center relative py-20 px-4 sm:px-6 lg:px-8">
+            <!-- Background Video Element -->
+            <video class="hero-video-bg" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80">
+                <source src="hero.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Dark Overlay for High Contrast Text Readability (WCAG 2.1 AA) -->
+            <div class="hero-overlay absolute inset-0 bg-slate-950/75 mix-blend-multiply z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-900/60 z-10"></div>
+
+            <!-- Centered Hero Content Box -->
+            <div class="relative z-20 max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+                
+                <!-- Eyebrow Text (Direct, clean, centered text with no pill container) -->
+                <p class="text-xs sm:text-sm font-bold tracking-widest uppercase text-brand-cyan mb-4">
+                    FEDERALLY QUALIFIED HEALTH CENTER (FQHC)
+                </p>
+
+                <!-- Main Heading -->
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-md">
+                    Whole-Person Healthcare for Every Member of Our Community
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-lg sm:text-xl text-slate-200 mb-8 max-w-3xl font-normal leading-relaxed">
+                    Empowering South Los Angeles and Long Beach with integrated primary medical care, behavioral health, dental services, and wellness support for all ages — regardless of insurance status or ability to pay.
+                </p>
+
+                <!-- Centered Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+                    <button onclick="openAppointmentModal()" class="btn-primary w-full sm:w-auto bg-brand-teal hover:bg-cyan-500 text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                        <span>Schedule an Appointment</span>
+                    </button>
+                    <a href="#locations" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold text-base px-8 py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-location-dot text-brand-cyan" aria-hidden="true"></i>
+                        <span>Find a Location Near You</span>
+                    </a>
+                </div>
+
+                <!-- Urgent Care / Crisis Hotline Quick Bar integrated in Hero base -->
+                <div class="mt-12 bg-slate-900/90 border border-slate-700/80 rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-slate-300 max-w-2xl flex flex-wrap items-center justify-center gap-3 shadow-2xl">
+                    <span class="flex items-center gap-2 text-amber-400 font-bold">
+                        <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                        Need Same-Day Care or Immediate Help?
+                    </span>
+                    <span>Call our 24/7 Triage: <a href="tel:8556450033" class="text-white underline font-bold hover:text-brand-cyan">855-645-0033</a></span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. KEY IMPACT & QUICK FACTS COUNTER BANNER -->
+        <section aria-label="Key Impact & Clinic Statistics" class="bg-brand-deep text-white py-12 border-y border-brand-teal/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-brand-cyan mb-1">6 Sites</div>
+                        <div class="text-xs sm:text-sm font-medium text-slate-200">Community Clinics across SoCal</div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-brand-cyan mb-1">100%</div>
+                        <div class="text-xs sm:text-sm font-medium text-slate-200">Care Guarantee & Sliding Fee Scale</div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-brand-cyan mb-1">Integrated</div>
+                        <div class="text-xs sm:text-sm font-medium text-slate-200">Mind, Body & Oral Health Care</div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-brand-cyan mb-1">15,000+</div>
+                        <div class="text-xs sm:text-sm font-medium text-slate-200">Annual Patients Served</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. THE ROADS INTEGRATED CARE MODEL SECTION -->
+        <section id="care-model" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-teal font-bold text-sm tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200">The ROADS Difference</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-slate mt-3 mb-4">Whole-Person Healthcare Under One Roof</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        We break down traditional healthcare silos. At ROADS, your medical doctor, therapist, dentist, and social service case manager work as a unified team to support your overall wellness.
+                    </p>
+                </div>
+
+                <!-- 3 Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Pillar 1: Physical Health -->
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-brand-teal transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-blue-100 text-brand-deep rounded-2xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-slate mb-3">1. Primary Medical Care</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Comprehensive adult medicine, pediatrics, chronic disease management (diabetes, hypertension), immunizations, physicals, and preventative health screenings.
+                            </p>
+                        </div>
+                        <ul class="text-xs font-medium text-slate-700 space-y-2 border-t border-slate-200 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal" aria-hidden="true"></i> Board-certified doctors & nurses</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal" aria-hidden="true"></i> Same-day appointments available</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 2: Mental & Behavioral Health -->
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-brand-teal transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-teal-100 text-brand-teal rounded-2xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-slate mb-3">2. Behavioral Health & Psychiatry</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Individual and group therapy, psychiatric evaluation, medication management, trauma-informed care, and specialized substance use disorder programs (Matrix Model).
+                            </p>
+                        </div>
+                        <ul class="text-xs font-medium text-slate-700 space-y-2 border-t border-slate-200 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal" aria-hidden="true"></i> Licensed therapists & psychiatrists</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal" aria-hidden="true"></i> Culturally sensitive, bilingual care</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 3: Oral & Support Services -->
+                    <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-brand-teal transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-cyan-100 text-brand-deep rounded-2xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-tooth" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-slate mb-3">3. Dental & Social Support</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Cleanings, extractions, crowns, and oral surgery, paired with active case management, housing navigation, food security support, and Medi-Cal enrollment assistance.
+                            </p>
+                        </div>
+                        <ul class="text-xs font-medium text-slate-700 space-y-2 border-t border-slate-200 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal" aria-hidden="true"></i> Modern dental suites</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-teal" aria-hidden="true"></i> Dedicated patient navigation team</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. MODERN INTERACTIVE SERVICES GRID -->
+        <section id="services" class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <span class="text-brand-teal font-bold text-sm tracking-wider uppercase">Comprehensive Care</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-brand-slate mt-2">Services Designed for Your Family</h2>
+                    </div>
+                    
+                    <!-- Service Category Filter Buttons -->
+                    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter Services">
+                        <button onclick="filterServices('all')" id="btn-filter-all" class="service-filter-btn px-4 py-2 rounded-lg text-sm font-bold bg-brand-deep text-white shadow-sm transition" role="tab" aria-selected="true">All Services</button>
+                        <button onclick="filterServices('medical')" id="btn-filter-medical" class="service-filter-btn px-4 py-2 rounded-lg text-sm font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-300 transition" role="tab" aria-selected="false">Medical</button>
+                        <button onclick="filterServices('behavioral')" id="btn-filter-behavioral" class="service-filter-btn px-4 py-2 rounded-lg text-sm font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-300 transition" role="tab" aria-selected="false">Behavioral Health</button>
+                        <button onclick="filterServices('dental')" id="btn-filter-dental" class="service-filter-btn px-4 py-2 rounded-lg text-sm font-bold bg-white text-slate-700 hover:bg-slate-100 border border-slate-300 transition" role="tab" aria-selected="false">Dental & Specialty</button>
+                    </div>
+                </div>
+
+                <!-- Grid of Service Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="services-container">
+                    
+                    <!-- Service Card 1 -->
+                    <div class="service-card medical bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-blue-50 text-brand-deep rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Adult Primary Care</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Annual exams, disease prevention, hypertension & diabetes management, sick visits, and immunizations.</p>
+                        <span class="inline-block text-[11px] font-semibold text-brand-teal bg-teal-50 px-2.5 py-1 rounded">All 6 Locations</span>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="service-card behavioral bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-head-side-virus" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Psychiatry & Counseling</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Depression, anxiety, PTSD, crisis intervention, and ongoing psychiatric medication management.</p>
+                        <span class="inline-block text-[11px] font-semibold text-purple-700 bg-purple-50 px-2.5 py-1 rounded">In-Person & Telehealth</span>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="service-card dental bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-cyan-50 text-brand-teal rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-tooth" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Comprehensive Dental</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Cleanings, X-rays, fillings, extractions, root canals, and emergency tooth relief for children and adults.</p>
+                        <span class="inline-block text-[11px] font-semibold text-brand-teal bg-teal-50 px-2.5 py-1 rounded">Compton & Long Beach</span>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="service-card medical bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-child" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Pediatric Medicine</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Well-child checkups, CHDP exams, school physicals, pediatric vaccinations, and developmental screening.</p>
+                        <span class="inline-block text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Family Friendly</span>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="service-card behavioral bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-capsules" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Substance Use (AOD / Matrix)</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Outpatient alcohol & drug recovery using the evidence-based Matrix Model and Medication-Assisted Treatment (MAT).</p>
+                        <span class="inline-block text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">ROADS-MCA Center</span>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="service-card medical bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-person-breastfeeding" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Women's Health & Prenatal</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Pap smears, Family PACT family planning, prenatal exams, mammogram referrals, and wellness exams.</p>
+                        <span class="inline-block text-[11px] font-semibold text-rose-700 bg-rose-50 px-2.5 py-1 rounded">Family PACT Certified</span>
+                    </div>
+
+                    <!-- Service Card 7 -->
+                    <div class="service-card dental bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-[#0A4D68] fa-socks" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Podiatry & Foot Care</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Diabetic foot evaluations, wound prevention, ingrown nail treatment, and mobility support.</p>
+                        <span class="inline-block text-[11px] font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded">Specialty Care</span>
+                    </div>
+
+                    <!-- Service Card 8 -->
+                    <div class="service-card behavioral bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-house-chimney-medical" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Case Management & Housing</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">Connecting unhoused and vulnerable individuals to shelter resources, CalFresh, transportation, and legal aid.</p>
+                        <span class="inline-block text-[11px] font-semibold text-sky-700 bg-sky-50 px-2.5 py-1 rounded">Social Navigation</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 8. CLINIC LOCATIONS DIRECTORY & HOURS (Interactive 6 Clinics Switcher) -->
+        <section id="locations" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-teal font-bold text-sm tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Convenient Care Near You</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-slate mt-3 mb-4">Our 6 Southern California Clinic Sites</h2>
+                    <p class="text-slate-600 text-base">Select a clinic location below for direct phone numbers, hours, addresses, and available services.</p>
+                </div>
+
+                <!-- Location Selector Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 mb-8" role="tablist" aria-label="Clinic Locations">
+                    <button onclick="switchClinic('compton')" id="tab-compton" class="clinic-tab-btn px-4 py-3 rounded-xl text-sm font-bold bg-brand-deep text-white shadow transition" role="tab" aria-selected="true">Compton HQ</button>
+                    <button onclick="switchClinic('longbeach')" id="tab-longbeach" class="clinic-tab-btn px-4 py-3 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" role="tab" aria-selected="false">East Long Beach</button>
+                    <button onclick="switchClinic('gardena')" id="tab-gardena" class="clinic-tab-btn px-4 py-3 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" role="tab" aria-selected="false">Gardena</button>
+                    <button onclick="switchClinic('paramount')" id="tab-paramount" class="clinic-tab-btn px-4 py-3 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" role="tab" aria-selected="false">Paramount</button>
+                    <button onclick="switchClinic('lynwood')" id="tab-lynwood" class="clinic-tab-btn px-4 py-3 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" role="tab" aria-selected="false">Lynwood</button>
+                    <button onclick="switchClinic('mca')" id="tab-mca" class="clinic-tab-btn px-4 py-3 rounded-xl text-sm font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" role="tab" aria-selected="false">ROADS-MCA Center</button>
+                </div>
+
+                <!-- Clinic Details Card Content Box -->
+                <div id="clinic-details-content" class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-lg">
+                    <!-- Dynamic JS content injected here. Default: Compton HQ -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div class="flex items-center gap-3">
+                                <span class="bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Main Headquarters</span>
+                                <span class="text-xs text-slate-500 font-medium"><i class="fa-solid fa-bus text-brand-teal mr-1"></i> Accessible via Metro Bus 60 & 125</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-slate">Compton Community Clinic (HQ)</h3>
+                            <p class="text-slate-600 text-sm sm:text-base">121 S Long Beach Blvd, Compton, CA 90221</p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-2">
+                                <div class="bg-white p-4 rounded-xl border border-slate-200">
+                                    <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-clock text-brand-teal"></i> Clinic Hours</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed">
+                                        Mon - Fri: 8:00 AM – 5:00 PM<br>
+                                        Saturday: 8:30 AM – 1:00 PM<br>
+                                        Sunday: Closed
+                                    </p>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200">
+                                    <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-phone text-brand-teal"></i> Contact Direct</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed">
+                                        Appointments: <strong>310-627-5850</strong><br>
+                                        Fax Line: 310-627-5851<br>
+                                        After Hours: 855-645-0033
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm mb-2">Available Services at Compton Site:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-white border border-slate-300 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Primary Care</span>
+                                    <span class="bg-white border border-slate-300 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Behavioral Health</span>
+                                    <span class="bg-white border border-slate-300 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Full Dental Suite</span>
+                                    <span class="bg-white border border-slate-300 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Pediatrics</span>
+                                    <span class="bg-white border border-slate-300 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">Pharmacy Pick-Up</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 flex flex-wrap gap-4">
+                                <button onclick="openAppointmentModal()" class="bg-brand-teal hover:bg-brand-deep text-white font-bold px-6 py-3 rounded-xl text-sm shadow transition">
+                                    Book at Compton HQ
+                                </button>
+                                <a href="https://maps.google.com/?q=121+S+Long+Beach+Blvd+Compton+CA+90221" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold px-6 py-3 rounded-xl text-sm shadow-sm transition flex items-center gap-2">
+                                    <i class="fa-solid fa-diamond-turn-right text-brand-teal" aria-hidden="true"></i>
+                                    <span>Get Directions</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Location Image Preview -->
+                        <div class="lg:col-span-1">
+                            <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+                                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Exterior facade of modern ROADS Community Clinic in Compton California" class="w-full h-64 lg:h-80 object-cover">
+                                <div class="bg-slate-900 text-white p-3 text-center text-xs font-semibold">
+                                    ADA Accessible Parking & Ramp Entrance
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 9. INSURANCE, FINANCIAL ASSISTANCE & SLIDING FEE SCALE -->
+        <section id="patients" class="py-20 bg-brand-slate text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div>
+                        <span class="text-brand-cyan font-bold text-sm tracking-wider uppercase bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/30">100% Care Access Guarantee</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-6 leading-tight">
+                            Healthcare is a Human Right. We Turn No One Away.
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed mb-6">
+                            Whether you have full coverage, partial coverage, or no insurance at all, ROADS Community Clinics provides comprehensive medical, behavioral, and dental care.
+                        </p>
+                        
+                        <!-- Sliding Fee Scale Explanation -->
+                        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-6">
+                            <h3 class="text-lg font-bold text-amber-400 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+                                Sliding Fee Discount Scale
+                            </h3>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Fees are discounted based on your household income and family size following Federal Poverty Guidelines. Proof of income (paystub, tax return, or self-declaration statement) is all you need to qualify.
+                            </p>
+                        </div>
+
+                        <!-- Contact Assistance Team -->
+                        <div class="flex items-center gap-4">
+                            <a href="tel:3106275850" class="bg-brand-cyan hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition shadow-lg flex items-center gap-2">
+                                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                                <span>Speak with an Eligibility Specialist</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Accepted Insurances Grid -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl">
+                        <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-4">Accepted Plans & Programs</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4 text-xs font-semibold">
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-cyan text-lg" aria-hidden="true"></i>
+                                <span>Medi-Cal / LA Care / Health Net</span>
+                            </div>
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-cyan text-lg" aria-hidden="true"></i>
+                                <span>Medicare (Parts A, B, D)</span>
+                            </div>
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-cyan text-lg" aria-hidden="true"></i>
+                                <span>Covered California Plans</span>
+                            </div>
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-cyan text-lg" aria-hidden="true"></i>
+                                <span>My Health LA (MHLA)</span>
+                            </div>
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-cyan text-lg" aria-hidden="true"></i>
+                                <span>Family PACT Program</span>
+                            </div>
+                            <div class="bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex items-center gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-cyan text-lg" aria-hidden="true"></i>
+                                <span>CHDP Youth Program</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+                            <p class="text-xs text-slate-400">Uninsured? We assist with immediate Medi-Cal application enrollment on site.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 10. PATIENT TESTIMONIALS & COMMUNITY IMPACT -->
+        <section id="impact" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-teal font-bold text-sm tracking-wider uppercase">Voices of ROADS</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-slate mt-2">What Our Patients Say</h2>
+                    <p class="text-slate-600 text-base">Real stories of care, respect, and healing from South Los Angeles and Long Beach residents.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Quote 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-400 text-sm mb-4" aria-label="5 out of 5 stars">
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+                                "ROADS saved my life when I lost my job and health insurance. The doctor in Compton listened to me without judgment, fixed my diabetes prescription, and connected me with a therapist."
+                            </p>
+                        </div>
+                        <div class="border-t border-slate-100 pt-4 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand-deep text-white font-bold rounded-full flex items-center justify-center text-sm">
+                                M.R.
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900">Maria R.</h3>
+                                <p class="text-xs text-slate-500">Compton Resident • Patient 4 Years</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-400 text-sm mb-4" aria-label="5 out of 5 stars">
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+                                "Having dental care and my mental health counselor in the exact same building in East Long Beach is a blessing. The front desk staff is always gracious and respectful."
+                            </p>
+                        </div>
+                        <div class="border-t border-slate-100 pt-4 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand-teal text-white font-bold rounded-full flex items-center justify-center text-sm">
+                                D.W.
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900">David W.</h3>
+                                <p class="text-xs text-slate-500">Long Beach Resident • Patient 2 Years</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quote 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm relative flex flex-col justify-between">
+                        <div>
+                            <div class="text-amber-400 text-sm mb-4" aria-label="5 out of 5 stars">
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm italic leading-relaxed mb-6">
+                                "As a Spanish speaker, finding doctors who truly understand my background and speak fluent Spanish meant everything to my mother's cardiac care."
+                            </p>
+                        </div>
+                        <div class="border-t border-slate-100 pt-4 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-indigo-600 text-white font-bold rounded-full flex items-center justify-center text-sm">
+                                E.G.
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900">Elena G.</h3>
+                                <p class="text-xs text-slate-500">Gardena Resident • Family Patient</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 11. PATIENT RESOURCES & TELEHEALTH QUICK PORTAL CTA -->
+        <section class="py-16 bg-gradient-to-br from-brand-deep to-slate-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold mb-4">Ready for Your First Visit or Telehealth Session?</h2>
+                <p class="text-slate-300 max-w-2xl mx-auto text-base mb-8">
+                    Download new patient registration forms, request prescription refills, or connect directly with your care provider online.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="openAppointmentModal()" class="bg-brand-teal hover:bg-cyan-400 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
+                        Schedule Online Now
+                    </button>
+                    <a href="tel:3106275850" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold px-8 py-3.5 rounded-xl transition">
+                        Call Desk: 310-627-5850
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 12. COMPREHENSIVE ADA COMPLIANT FOOTER -->
+    <footer role="contentinfo" class="bg-slate-950 text-slate-400 text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+                
+                <!-- Col 1 & 2: Organization Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-teal rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white tracking-tight">ROADS Community Clinics</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+                        The ROADS Foundation Inc. is a non-profit 501(c)(3) Federally Qualified Health Center (FQHC) dedicated to providing high-quality, whole-person medical, behavioral, and dental care in Southern California.
+                    </p>
+                    
+                    <!-- Emergency Callout Badge -->
+                    <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs space-y-1">
+                        <p class="text-amber-400 font-bold flex items-center gap-1.5">
+                            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                            Medical Emergency Notice:
+                        </p>
+                        <p class="text-slate-300">If you are experiencing a life-threatening medical crisis, please call <strong>911</strong> immediately.</p>
+                        <p class="text-slate-300">Mental Health Crisis / Suicide Lifeline: Call or text <strong>988</strong> (24/7 Free & Confidential).</p>
+                    </div>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div>
+                    <h3 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Quick Navigation</h3>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#about" class="hover:text-brand-cyan transition">About ROADS Foundation</a></li>
+                        <li><a href="#care-model" class="hover:text-brand-cyan transition">Integrated Care Model</a></li>
+                        <li><a href="#services" class="hover:text-brand-cyan transition">Medical & Dental Services</a></li>
+                        <li><a href="#locations" class="hover:text-brand-cyan transition">Clinic Directory & Hours</a></li>
+                        <li><a href="#patients" class="hover:text-brand-cyan transition">Sliding Fee Scale & Insurance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Key Locations Summary -->
+                <div>
+                    <h3 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Main Locations</h3>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><strong class="text-slate-200">Compton HQ:</strong> 121 S Long Beach Blvd</li>
+                        <li><strong class="text-slate-200">East Long Beach:</strong> Primary & Dental</li>
+                        <li><strong class="text-slate-200">Gardena Clinic:</strong> Family Medicine</li>
+                        <li><strong class="text-slate-200">ROADS-MCA Center:</strong> Behavioral Health</li>
+                        <li><strong class="text-slate-200">Lynwood & Paramount:</strong> Community Health</li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: ADA & Contact Badge -->
+                <div>
+                    <h3 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Accessibility & Trust</h3>
+                    <div class="space-y-3 text-xs">
+                        <div class="flex items-center gap-2 bg-slate-900 p-2.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-universal-access text-brand-cyan text-lg" aria-hidden="true"></i>
+                            <span class="text-slate-300 font-medium">WCAG 2.1 AA Compliant Platform</span>
+                        </div>
+                        <p class="text-slate-400 text-[11px] leading-relaxed">
+                            This website is designed for screen-readers, high-contrast usability, and full keyboard navigation.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Strip -->
+            <div class="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 The ROADS Foundation Inc. All rights reserved. ROADS Community Clinics.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-300">ADA Compliance Statement</a>
+                    <a href="#" class="hover:text-slate-300">Nondiscrimination Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 13. ACCESSIBLE INTERACTIVE APPOINTMENT MODAL -->
+    <div id="appointment-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative transform transition-all">
+            
+            <!-- Close Modal Button -->
+            <button onclick="closeAppointmentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 p-2 rounded-full focus:outline-none" aria-label="Close Appointment Modal">
+                <i class="fa-solid fa-xmark text-xl" aria-hidden="true"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="mb-6">
+                <span class="text-brand-teal text-xs font-bold uppercase tracking-wider bg-teal-50 px-2.5 py-1 rounded">Quick Scheduling</span>
+                <h3 id="modal-title" class="text-2xl font-bold text-slate-900 mt-2">Book Your Visit at ROADS</h3>
+                <p class="text-xs text-slate-600 mt-1">Fill out your details below and a intake coordinator will call you back within 24 hours to confirm.</p>
+            </div>
+
+            <!-- Form -->
+            <form onsubmit="handleAppointmentSubmit(event)" class="space-y-4 text-xs sm:text-sm">
+                <div>
+                    <label for="app-name" class="block font-bold text-slate-700 mb-1">Full Name <span class="text-rose-500">*</span></label>
+                    <input type="text" id="app-name" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-teal focus:outline-none" placeholder="Jane Doe">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="app-phone" class="block font-bold text-slate-700 mb-1">Phone Number <span class="text-rose-500">*</span></label>
+                        <input type="tel" id="app-phone" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-teal focus:outline-none" placeholder="(310) 555-0199">
+                    </div>
+                    <div>
+                        <label for="app-location" class="block font-bold text-slate-700 mb-1">Preferred Clinic</label>
+                        <select id="app-location" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-teal focus:outline-none">
+                            <option value="compton">Compton HQ</option>
+                            <option value="longbeach">East Long Beach</option>
+                            <option value="gardena">Gardena Clinic</option>
+                            <option value="paramount">Paramount Clinic</option>
+                            <option value="lynwood">Lynwood Clinic</option>
+                            <option value="mca">ROADS-MCA Center</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="app-service" class="block font-bold text-slate-700 mb-1">Service Needed</label>
+                    <select id="app-service" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-teal focus:outline-none">
+                        <option value="primary">Primary Medical Care / Doctor Visit</option>
+                        <option value="dental">Dental Cleaning or Tooth Care</option>
+                        <option value="behavioral">Behavioral Health / Therapy</option>
+                        <option value="pediatrics">Pediatric Care</option>
+                        <option value="slidingfee">Sliding Fee Scale / Insurance Help</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="app-notes" class="block font-bold text-slate-700 mb-1">Additional Notes (Optional)</label>
+                    <textarea id="app-notes" rows="2" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-teal focus:outline-none" placeholder="Preferred dates or time of day..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-brand-teal hover:bg-brand-deep text-white font-bold py-3.5 rounded-xl shadow-md transition text-base mt-2">
+                    Submit Appointment Request
+                </button>
+            </form>
+
+            <div id="modal-success-message" class="hidden mt-4 bg-emerald-50 text-emerald-800 p-4 rounded-xl border border-emerald-200 text-center text-xs font-bold">
+                <i class="fa-solid fa-circle-check text-base block mb-1"></i>
+                Thank you! Your request has been received. Our team will contact you shortly.
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 14. ACCESSIBLE JAVASCRIPT LOGIC -->
+    <script>
+        // --- Font Size Adjustment State ---
+        let currentFontStep = 0; // -1, 0, +1
+        function changeFontSize(step) {
+            const html = document.documentElement;
+            if (step === 0) {
+                currentFontStep = 0;
+                html.style.setProperty('--base-font-size', '16px');
+            } else if (step === 1 && currentFontStep < 2) {
+                currentFontStep++;
+                const newSize = 16 + (currentFontStep * 2);
+                html.style.setProperty('--base-font-size', `${newSize}px`);
+            } else if (step === -1 && currentFontStep > -1) {
+                currentFontStep--;
+                const newSize = 16 + (currentFontStep * 2);
+                html.style.setProperty('--base-font-size', `${newSize}px`);
+            }
+        }
+
+        // --- High Contrast Toggle Mode ---
+        let isHighContrast = false;
+        function toggleHighContrast() {
+            isHighContrast = !isHighContrast;
+            const body = document.body;
+            const btn = document.getElementById('contrast-toggle');
+
+            if (isHighContrast) {
+                body.classList.add('high-contrast');
+                btn.setAttribute('aria-pressed', 'true');
+            } else {
+                body.classList.remove('high-contrast');
+                btn.setAttribute('aria-pressed', 'false');
+            }
+        }
+
+        // --- Mobile Hamburger Menu Handler ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+            if (isExpanded) {
+                menu.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                menu.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+                openIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            }
+        }
+
+        // --- Services Grid Filter ---
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.service-card');
+            const buttons = document.querySelectorAll('.service-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-deep', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            const activeBtn = document.getElementById(`btn-filter-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-slate-700');
+                activeBtn.classList.add('bg-brand-deep', 'text-white');
+                activeBtn.setAttribute('aria-selected', 'true');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // --- Clinic Locations Data & Interactive Switcher ---
+        const clinicData = {
+            compton: {
+                title: "Compton Community Clinic (HQ)",
+                badge: "Main Headquarters",
+                transit: "Accessible via Metro Bus 60 & 125",
+                address: "121 S Long Beach Blvd, Compton, CA 90221",
+                hours: "Mon - Fri: 8:00 AM – 5:00 PM<br>Saturday: 8:30 AM – 1:00 PM<br>Sunday: Closed",
+                phone: "310-627-5850",
+                fax: "310-627-5851",
+                services: ["Primary Care", "Behavioral Health", "Full Dental Suite", "Pediatrics", "Pharmacy Pick-Up"],
+                image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+                mapsUrl: "https://maps.google.com/?q=121+S+Long+Beach+Blvd+Compton+CA+90221"
+            },
+            longbeach: {
+                title: "East Long Beach Clinic",
+                badge: "Integrated Care Center",
+                transit: "LBT Bus Lines 91 & 93",
+                address: "East Long Beach Health Campus, Long Beach, CA 90804",
+                hours: "Mon - Fri: 8:00 AM – 5:00 PM<br>Saturday & Sunday: Closed",
+                phone: "310-627-5850",
+                fax: "310-627-5851",
+                services: ["Primary Care", "Oral Health & Dental", "Counseling", "Medi-Cal Enrollment"],
+                image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80",
+                mapsUrl: "https://maps.google.com/?q=Long+Beach+CA+90804"
+            },
+            gardena: {
+                title: "Gardena Health Center",
+                badge: "Community Clinic",
+                transit: "Gardena Transit Line 1",
+                address: "Gardena Community Corridor, Gardena, CA 90247",
+                hours: "Mon - Fri: 8:30 AM – 5:00 PM<br>Saturday & Sunday: Closed",
+                phone: "310-627-5850",
+                fax: "310-627-5851",
+                services: ["Family Medicine", "Preventative Health", "Podiatry", "Behavioral Health"],
+                image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80",
+                mapsUrl: "https://maps.google.com/?q=Gardena+CA+90247"
+            },
+            paramount: {
+                title: "Paramount Clinic",
+                badge: "Primary & Family Care",
+                transit: "Metro Bus 128",
+                address: "Paramount Regional Center, Paramount, CA 90723",
+                hours: "Mon - Fri: 8:00 AM – 4:30 PM<br>Saturday & Sunday: Closed",
+                phone: "310-627-5850",
+                fax: "310-627-5851",
+                services: ["Adult Medical Care", "Pediatrics", "Women's Health", "Sliding Scale Counseling"],
+                image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+                mapsUrl: "https://maps.google.com/?q=Paramount+CA+90723"
+            },
+            lynwood: {
+                title: "Lynwood Care Center",
+                badge: "Community Health Hub",
+                transit: "Lynwood Breeze Line A",
+                address: "Lynwood Health District, Lynwood, CA 90262",
+                hours: "Mon - Fri: 8:00 AM – 5:00 PM<br>Saturday & Sunday: Closed",
+                phone: "310-627-5850",
+                fax: "310-627-5851",
+                services: ["Primary Care", "Chronic Disease Management", "Family PACT", "Immunizations"],
+                image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+                mapsUrl: "https://maps.google.com/?q=Lynwood+CA+90262"
+            },
+            mca: {
+                title: "ROADS-MCA Behavioral Health Center",
+                badge: "Specialized Mental Health & Recovery",
+                transit: "Direct Access from Metro Rail",
+                address: "ROADS-MCA Specialized Behavioral Pavilion, CA",
+                hours: "Mon - Fri: 8:00 AM – 6:00 PM<br>24/7 Crisis Triage Line Active",
+                phone: "310-627-5850",
+                fax: "310-627-5851",
+                services: ["Psychiatry", "Substance Use Disorder (AOD)", "Matrix Model Outpatient", "Case Management & Housing"],
+                image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+                mapsUrl: "https://maps.google.com/?q=Compton+CA+90221"
+            }
+        };
+
+        function switchClinic(key) {
+            const data = clinicData[key];
+            if (!data) return;
+
+            // Highlight Tab Buttons
+            const tabs = document.querySelectorAll('.clinic-tab-btn');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-brand-deep', 'text-white', 'shadow');
+                tab.classList.add('bg-slate-100', 'text-slate-700');
+                tab.setAttribute('aria-selected', 'false');
+            });
+
+            const activeTab = document.getElementById(`tab-${key}`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-slate-100', 'text-slate-700');
+                activeTab.classList.add('bg-brand-deep', 'text-white', 'shadow');
+                activeTab.setAttribute('aria-selected', 'true');
+            }
+
+            // Generate Tags HTML
+            const tagsHtml = data.services.map(s => 
+                `<span class="bg-white border border-slate-300 text-slate-700 text-xs px-3 py-1 rounded-full font-medium">${s}</span>`
+            ).join(' ');
+
+            // Inject Content
+            const container = document.getElementById('clinic-details-content');
+            container.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">${data.badge}</span>
+                            <span class="text-xs text-slate-500 font-medium"><i class="fa-solid fa-bus text-brand-teal mr-1"></i> ${data.transit}</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-slate">${data.title}</h3>
+                        <p class="text-slate-600 text-sm sm:text-base">${data.address}</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-2">
+                            <div class="bg-white p-4 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-clock text-brand-teal"></i> Clinic Hours</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed">${data.hours}</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2"><i class="fa-solid fa-phone text-brand-teal"></i> Contact Direct</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed">
+                                    Appointments: <strong>${data.phone}</strong><br>
+                                    Fax Line: ${data.fax}<br>
+                                    After Hours: 855-645-0033
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm mb-2">Available Services at Site:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                ${tagsHtml}
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <button onclick="openAppointmentModal()" class="bg-brand-teal hover:bg-brand-deep text-white font-bold px-6 py-3 rounded-xl text-sm shadow transition">
+                                Book at this Site
+                            </button>
+                            <a href="${data.mapsUrl}" target="_blank" rel="noopener noreferrer" class="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold px-6 py-3 rounded-xl text-sm shadow-sm transition flex items-center gap-2">
+                                <i class="fa-solid fa-diamond-turn-right text-brand-teal" aria-hidden="true"></i>
+                                <span>Get Directions</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+                            <img src="${data.image}" alt="Clinic exterior view of ${data.title}" class="w-full h-64 lg:h-80 object-cover">
+                            <div class="bg-slate-900 text-white p-3 text-center text-xs font-semibold">
+                                ADA Accessible Entrance & Parking Available
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- Appointment Modal Handling ---
+        function openAppointmentModal() {
+            const modal = document.getElementById('appointment-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus on first input
+            setTimeout(() => {
+                document.getElementById('app-name').focus();
+            }, 100);
+        }
+
+        function closeAppointmentModal() {
+            const modal = document.getElementById('appointment-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('modal-success-message').classList.add('hidden');
+        }
+
+        function handleAppointmentSubmit(event) {
+            event.preventDefault();
+            const msg = document.getElementById('modal-success-message');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                closeAppointmentModal();
+            }, 2500);
+        }
+
+        // --- Keyboard Close Modal (Escape key) ---
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAppointmentModal();
+            }
+        });
+    </script>
+</body>
+</html>
